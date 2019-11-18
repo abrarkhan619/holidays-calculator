@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../css/nhsuk-2.3.0.css" rel="stylesheet">
+    <script type="text/javascript" src="../js/main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+  <div class="nhsuk-width-container">
+    <main class="nhsuk-main-wrapper">
+      <div class="nhsuk-form-group">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Length of service in the NHS:
+            </h1>
+          </legend>
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="service-opt1" name="service-length" type="radio" value="27">
+              <label class="nhsuk-label nhsuk-radios__label" for="service-opt1">
+                Less than 5 years
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="service-opt2" name="service-length" type="radio" value="29">
+              <label class="nhsuk-label nhsuk-radios__label" for="service-opt2">
+                Between 5 and 9 years
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="service-opt3" name="service-length" type="radio" value="33">
+                <label class="nhsuk-label nhsuk-radios__label" for="service-opt3">
+                  10 or more years
+                </label>
+              </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="nhsuk-form-group">
+        <h1 class="nhsuk-label-wrapper">
+          <label class="nhsuk-label nhsuk-label--l" for="contracted-hours">
+            Number of contracted hours per week:
+          </label>
+        </h1>
+        <input class="nhsuk-input nhsuk-input--width-3" id="contracted-hours" name="contracted-hours" type="number">
+      </div>
+
+      <div class="buttons">
+        <button class="nhsuk-button" id="calculate-button" type="calculate">Calculate</button>
+      </div>
+
+      <div>
+        <p>Full-time equivalent: <span id="result-fte"></span></p>
+        <p>Entitled number of days: <span id="result-days"></span></p>
+        <p>Entitled number of hours: <span id="result-hours"></span></p>
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>
