@@ -57,7 +57,19 @@
             </label>
           </h1>
           <input class="nhsuk-input nhsuk-input--width-3" id="days-remaining" name="days-remaining" type="number">
-        </div>
+      </div>
+
+      <div class="nhsuk-form-group">
+          <h1 class="nhsuk-label-wrapper">
+            <label class="nhsuk-label nhsuk-label--l" for="bank-holidays">
+              Number of bank holidays in the leave year:
+            </label>
+            <span class="nhsuk-hint" id="bank-holidays-hint">
+                Only use if calculating pro rata bank holiday entitlement
+            </span>
+          </h1>
+          <input class="nhsuk-input nhsuk-input--width-3" id="bank-holidays" name="bank-holidays" type="number">
+      </div>
 
       <div class="buttons">
         <button class="nhsuk-button" id="calculate-button" type="calculate">Calculate</button>
@@ -67,6 +79,8 @@
         <p>Full-time equivalent: <span id="result-fte"></span></p>
         <p>Entitled number of days: <span id="result-days"></span></p>
         <p>Entitled number of hours: <span id="result-hours"></span></p>
+        <p>Pro-rata bank holiday entitlement (Days): <span id="pro-rata-days"></span></p>
+        <p>Pro-rata bank holiday entitlement (Hours): <span id="pro-rata-hours"></span></p>
       </div>
 
     </main>
