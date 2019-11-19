@@ -51,25 +51,56 @@
       </div>
 
       <div class="nhsuk-form-group">
-          <h1 class="nhsuk-label-wrapper">
-            <label class="nhsuk-label nhsuk-label--l" for="days-remaining">
-              Calendar days in period:
-            </label>
-          </h1>
-          <input class="nhsuk-input nhsuk-input--width-3" id="days-remaining" name="days-remaining" type="number">
+        <fieldset class="nhsuk-fieldset" aria-describedby="date-hint" role="group">
+          <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+            <h1 class="nhsuk-fieldset__heading">
+              What was the start date?
+            </h1>
+          </legend>
+          <span class="nhsuk-hint" id="date-hint">
+            For example, 24 9 2018
+          </span>
+
+          <div class="nhsuk-date-input" id="start-date">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="start-day">
+                  Day
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-day" name="start-day" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="start-month">
+                  Month
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-month" name="start-month" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="start-year">
+                  Year
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="start-year" name="start-year" type="number" pattern="[0-9]*">
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </div>
 
-      <div class="nhsuk-form-group">
-          <h1 class="nhsuk-label-wrapper">
-            <label class="nhsuk-label nhsuk-label--l" for="bank-holidays">
-              Number of bank holidays in the leave year:
-            </label>
-            <span class="nhsuk-hint" id="bank-holidays-hint">
-                Only use if calculating pro rata bank holiday entitlement
-            </span>
-          </h1>
-          <input class="nhsuk-input nhsuk-input--width-3" id="bank-holidays" name="bank-holidays" type="number">
-      </div>
+    <div class="nhsuk-form-group">
+        <h1 class="nhsuk-label-wrapper">
+          <label class="nhsuk-label nhsuk-label--l" for="bank-holidays">
+            Number of bank holidays in the leave year:
+          </label>
+          <span class="nhsuk-hint" id="bank-holidays-hint">
+              Only use if calculating pro rata bank holiday entitlement
+          </span>
+        </h1>
+        <input class="nhsuk-input nhsuk-input--width-3" id="bank-holidays" name="bank-holidays" type="number">
+    </div>
 
       <div class="buttons">
         <button class="nhsuk-button" id="calculate-button" type="calculate">Calculate</button>
