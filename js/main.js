@@ -38,7 +38,29 @@ function calculateEntitlement() {
 }
 
 
+function showHideDate() {
 
+  const startDateInput = document.getElementById('start-date-input');
+  const startDateCurrentYear = document.getElementById('startdate-opt1')
+
+  if (startDateCurrentYear.checked == true){
+    startDateInput.style.display = "block";
+  } else {
+    startDateInput.style.display = "none";
+  }
+
+  const endDateInput = document.getElementById('end-date-input');
+  const endDateCurrentYear = document.getElementById('enddate-opt1')
+
+
+  if (endDateCurrentYear.checked == true){
+    endDateInput.style.display = "block";
+    console.log("1234")
+  } else {
+    endDateInput.style.display = "none";
+    console.log("hello world")
+  }
+}
 
 
 
@@ -53,6 +75,11 @@ function addEventListenerIfElementExists(elementId, eventType, eventFunction) {
 
 function registerListeners() {
   addEventListenerIfElementExists("calculate-button", "click", calculateEntitlement);
+  addEventListenerIfElementExists("startdate-opt1", "click", showHideDate)
+  addEventListenerIfElementExists("startdate-opt2", "click", showHideDate)
+  addEventListenerIfElementExists("enddate-opt1", "click", showHideDate)
+  addEventListenerIfElementExists("enddate-opt2", "click", showHideDate)
+
 }
 
 window.addEventListener("load", registerListeners);

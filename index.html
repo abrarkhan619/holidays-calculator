@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="../css/nhsuk-2.3.0.css" rel="stylesheet">
+    <link href="../css/nhsuk-2.3.0.css" href="../css/main.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
     <script type="text/javascript" src="../js/main.js"></script>
     <title>Document</title>
 </head>
@@ -51,44 +52,114 @@
       </div>
 
       <div class="nhsuk-form-group">
-        <fieldset class="nhsuk-fieldset" aria-describedby="date-hint" role="group">
-          <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-            <h1 class="nhsuk-fieldset__heading">
-              What was the start date?
-            </h1>
-          </legend>
-          <span class="nhsuk-hint" id="date-hint">
-            For example, 24 9 2018
-          </span>
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Did the employee start in the middle of the current Tax year?
+              </h1>
+            </legend>
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="startdate-opt1" name="start-date-year" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="startdate-opt1">Yes</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="startdate-opt2" name="start-date-year" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="startdate-opt2">No</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
 
-          <div class="nhsuk-date-input" id="start-date">
-            <div class="nhsuk-date-input__item">
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="start-day">
-                  Day
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-day" name="start-day" type="number" pattern="[0-9]*">
+        <div class="nhsuk-form-group" id="start-date-input">
+            <fieldset class="nhsuk-fieldset" aria-describedby="start-hint" role="group">
+              <span class="nhsuk-hint" id="start-hint">
+                If yes please enter the start date:
+              </span>
+
+              <div class="nhsuk-date-input" id="date-input-boxes">
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="start-day">
+                      Day
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-day" name="start-day" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="start-month">
+                      Month
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-month" name="start-month" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
+                <div class="nhsuk-date-input__item">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label nhsuk-date-input__label" for="start-year">
+                      Year
+                    </label>
+                    <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="start-year" name="start-year" type="number" pattern="[0-9]*">
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="nhsuk-date-input__item">
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="start-month">
-                  Month
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-month" name="start-month" type="number" pattern="[0-9]*">
-              </div>
-            </div>
-            <div class="nhsuk-date-input__item">
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="start-year">
-                  Year
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="start-year" name="start-year" type="number" pattern="[0-9]*">
-              </div>
-            </div>
+            </fieldset>
           </div>
-        </fieldset>
-      </div>
+
+          <div class="nhsuk-form-group">
+              <fieldset class="nhsuk-fieldset">
+                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                  <h1 class="nhsuk-fieldset__heading">
+                    Is the employee finishing before the end of the current Tax year?
+                  </h1>
+                </legend>
+                <div class="nhsuk-radios">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="enddate-opt1" name="end-date-year" type="radio" value="yes">
+                    <label class="nhsuk-label nhsuk-radios__label" for="enddate-opt1">Yes</label>
+                  </div>
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="enddate-opt2" name="end-date-year" type="radio" value="no">
+                    <label class="nhsuk-label nhsuk-radios__label" for="enddate-opt2">No</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="nhsuk-form-group" id="end-date-input">
+                <fieldset class="nhsuk-fieldset" aria-describedby="start-hint" role="group">
+                  <span class="nhsuk-hint" id="start-hint">
+                    If yes please enter the end date:
+                  </span>
+
+                  <div class="nhsuk-date-input" id="date-input-boxes">
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="end-day">
+                          Day
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="end-day" name="end-day" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="end-month">
+                          Month
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="end-month" name="end-month" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="end-year">
+                          Year
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="end-year" name="end-year" type="number" pattern="[0-9]*">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
 
     <div class="nhsuk-form-group">
         <h1 class="nhsuk-label-wrapper">
