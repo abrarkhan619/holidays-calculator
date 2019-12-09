@@ -6,18 +6,39 @@ function calculateEntitlement() {
 
   const startDay = document.getElementById('start-day').value;
   const startMonth = document.getElementById('start-month').value - 1;
-  const startYear = document.getElementById('start-year').value;
+  const startYear = parseInt(document.getElementById('start-year').value);
 
-  const startDate = new Date(startYear, startMonth, startDay);
+  const endDay = document.getElementById('end-day').value;
+  const endMonth = document.getElementById('end-month').value - 1;
+  const endYear = document.getElementById('end-year').value;
+
+  let startDate = new Date(startYear, startMonth, startDay);
+  let endDate = new Date(endYear, endMonth, endDay);
   const oneDay = 1000 * 60 * 60 * 24;
-  let endYear = startDate.getFullYear();
 
-  if (startDate.getMonth() >= 3) {
-    endYear++;
+  const defaultStartDate = document.getElementById('startdate-opt2').checked;
+
+  if (defaultStartDate == true && endDate.getMonth() <= 2) {
+    startDate = new Date(endYear-1, 3, 1);
+  } else if (defaultStartDate == true && endDate.getMonth() >= 3) {
+    startDate = new Date (endYear, 3, 1);
+  } else {
+    startDate = new Date (startYear, startMonth, startDay);
   }
+  console.log(startDate)
 
-  const endDate = new Date(endYear, 3, 1);
-  const dateDifference = Math.ceil((endDate - startDate) / oneDay);
+  const defaultEndDate = document.getElementById('enddate-opt2').checked;
+
+  if (defaultEndDate == true && startDate.getMonth() >= 3) {
+    endDate = new Date(startYear+1, 2, 31);
+  } else if (defaultEndDate == true && startDate.getMonth() <= 2) {
+    endDate = new Date (startYear, 2, 31);
+  } else {
+    endDate = new Date (endYear, endMonth, endDay);
+  }
+  console.log(endDate)
+
+  const dateDifference = Math.ceil(((endDate - startDate) / oneDay)+1);
   console.log(dateDifference);
 
   if (bankHolidays.length == 0) {
@@ -42,6 +63,8 @@ function showHideDate() {
 
   const startDateInput = document.getElementById('start-date-input');
   const startDateCurrentYear = document.getElementById('startdate-opt1')
+  const endDateInput = document.getElementById('end-date-input');
+  const endDateCurrentYear = document.getElementById('enddate-opt1');
 
   if (startDateCurrentYear.checked == true){
     startDateInput.style.display = "block";
@@ -49,19 +72,12 @@ function showHideDate() {
     startDateInput.style.display = "none";
   }
 
-  const endDateInput = document.getElementById('end-date-input');
-  const endDateCurrentYear = document.getElementById('enddate-opt1')
-
-
   if (endDateCurrentYear.checked == true){
     endDateInput.style.display = "block";
-    console.log("1234")
   } else {
     endDateInput.style.display = "none";
-    console.log("hello world")
   }
 }
-
 
 
 
