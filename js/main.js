@@ -16,7 +16,7 @@ function calculateEntitlement() {
     startYear = 2019; // TODO: get current year programatically.
   }
 
-  const startDate = new Date(startYear, startMonth, startDay);
+  const startDate = new Date(Date.UTC(startYear, startMonth, startDay));
 
   let endDay = document.getElementById('end-day').value;
   let endMonth = document.getElementById('end-month').value - 1;
@@ -35,7 +35,7 @@ function calculateEntitlement() {
     }
   }
 
-  const endDate = new Date(endYear, endMonth, endDay);
+  const endDate = new Date(Date.UTC(endYear, endMonth, endDay));
 
   const oneDay = 1000 * 60 * 60 * 24;
   const dateDifference = Math.ceil(((endDate - startDate) / oneDay)+1);
