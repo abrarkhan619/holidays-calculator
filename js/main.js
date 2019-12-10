@@ -13,8 +13,9 @@ function calculateEntitlement() {
   if (useDefaultStartDate) {
     startDay = 1;
     startMonth = 3;
-    startYear = 2019; // TODO: get current year programatically.
+    startYear = new Date().getFullYear(); // TODO: get current year programatically.
   }
+  console.log(startYear);
 
   const startDate = new Date(Date.UTC(startYear, startMonth, startDay));
 
