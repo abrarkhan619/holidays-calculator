@@ -4,41 +4,45 @@ function calculateEntitlement() {
   const weeklyHours = document.getElementById('contracted-hours').value;
   let bankHolidays = document.getElementById('bank-holidays').value;
 
-  const startDay = document.getElementById('start-day').value;
-  const startMonth = document.getElementById('start-month').value - 1;
-  const startYear = parseInt(document.getElementById('start-year').value);
+  let startDay = document.getElementById('start-day').value;
+  let startMonth = document.getElementById('start-month').value - 1;
+  let startYear = parseInt(document.getElementById('start-year').value);
 
-  const endDay = document.getElementById('end-day').value;
-  const endMonth = document.getElementById('end-month').value - 1;
-  const endYear = document.getElementById('end-year').value;
+  const useDefaultStartDate = document.getElementById('startdate-opt2').checked;
 
-  let startDate = new Date(startYear, startMonth, startDay);
-  let endDate = new Date(endYear, endMonth, endDay);
+  if (useDefaultStartDate) {
+    startDay = 1;
+    startMonth = 3;
+    startYear = 2019; // TODO: get current year programatically.
+  }
+
+  const startDate = new Date(startYear, startMonth, startDay);
+
+  let endDay = document.getElementById('end-day').value;
+  let endMonth = document.getElementById('end-month').value - 1;
+  let endYear = document.getElementById('end-year').value;
+
+  const useDefaultEndDate = document.getElementById('enddate-opt2').checked;
+
+  if (useDefaultEndDate) {
+    endDay = 31;
+    endMonth = 2;
+
+    if (startMonth >= 3) {
+      endYear = startYear + 1;
+    } else {
+      endYear = startYear;
+    }
+  }
+
+  const endDate = new Date(endYear, endMonth, endDay);
+
   const oneDay = 1000 * 60 * 60 * 24;
-
-  const defaultStartDate = document.getElementById('startdate-opt2').checked;
-
-  if (defaultStartDate == true && endDate.getMonth() <= 2) {
-    startDate = new Date(endYear-1, 3, 1);
-  } else if (defaultStartDate == true && endDate.getMonth() >= 3) {
-    startDate = new Date (endYear, 3, 1);
-  } else {
-    startDate = new Date (startYear, startMonth, startDay);
-  }
-  console.log(startDate)
-
-  const defaultEndDate = document.getElementById('enddate-opt2').checked;
-
-  if (defaultEndDate == true && startDate.getMonth() >= 3) {
-    endDate = new Date(startYear+1, 2, 31);
-  } else if (defaultEndDate == true && startDate.getMonth() <= 2) {
-    endDate = new Date (startYear, 2, 31);
-  } else {
-    endDate = new Date (endYear, endMonth, endDay);
-  }
-  console.log(endDate)
-
   const dateDifference = Math.ceil(((endDate - startDate) / oneDay)+1);
+
+  //TODO: remove when finished
+  console.log(startDate)
+  console.log(endDate)
   console.log(dateDifference);
 
   if (bankHolidays.length == 0) {
@@ -80,7 +84,6 @@ function showHideDate() {
 }
 
 
-
 function addEventListenerIfElementExists(elementId, eventType, eventFunction) {
   const element = document.getElementById(elementId);
 
@@ -95,7 +98,6 @@ function registerListeners() {
   addEventListenerIfElementExists("startdate-opt2", "click", showHideDate)
   addEventListenerIfElementExists("enddate-opt1", "click", showHideDate)
   addEventListenerIfElementExists("enddate-opt2", "click", showHideDate)
-
 }
 
 window.addEventListener("load", registerListeners);
