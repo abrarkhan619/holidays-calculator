@@ -12,6 +12,30 @@
 <body>
   <div class="nhsuk-width-container">
     <main class="nhsuk-main-wrapper">
+        <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                <h1 class="nhsuk-fieldset__heading">
+                  What do you want to calculate?
+                </h1>
+              </legend>
+              <div class="nhsuk-radios">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="claculate-opt1" name="full-year-entitlement" type="radio" value="full year">
+                  <label class="nhsuk-label nhsuk-radios__label" for="claculate-opt1">
+                    Full years annual leave entitlement for both full time and part time employees
+                  </label>
+                </div>
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="calculate-opt2" name="full-year-entitlement" type="radio" value="part year">
+                  <label class="nhsuk-label nhsuk-radios__label" for="calculate-opt2">
+                    Part of a years annaul leave entitlement
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
       <div class="nhsuk-form-group">
         <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -45,7 +69,7 @@
       <div class="nhsuk-form-group">
         <h1 class="nhsuk-label-wrapper">
           <label class="nhsuk-label nhsuk-label--l" for="contracted-hours">
-            Number of contracted hours per week:
+            Enter number of contracted hours per week:
           </label>
         </h1>
         <input class="nhsuk-input nhsuk-input--width-3" id="contracted-hours" name="contracted-hours" type="number">
@@ -55,7 +79,7 @@
           <fieldset class="nhsuk-fieldset">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
               <h1 class="nhsuk-fieldset__heading">
-                Did the employee start in the middle of the current Tax year?
+                Do you want to calculate entitlement from the start of the current tax year?
               </h1>
             </legend>
             <div class="nhsuk-radios">
@@ -74,7 +98,7 @@
         <div class="nhsuk-form-group" id="start-date-input">
             <fieldset class="nhsuk-fieldset" aria-describedby="start-hint" role="group">
               <span class="nhsuk-hint" id="start-hint">
-                If yes please enter the start date:
+                If no, please input the start date below:
               </span>
 
               <div class="nhsuk-date-input" id="date-input-boxes">
@@ -110,7 +134,7 @@
               <fieldset class="nhsuk-fieldset">
                 <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
                   <h1 class="nhsuk-fieldset__heading">
-                    Is the employee finishing before the end of the current Tax year?
+                    Do you want to calculate entitlement till the end of the current Tax year?
                   </h1>
                 </legend>
                 <div class="nhsuk-radios">
@@ -129,7 +153,7 @@
             <div class="nhsuk-form-group" id="end-date-input">
                 <fieldset class="nhsuk-fieldset" aria-describedby="start-hint" role="group">
                   <span class="nhsuk-hint" id="start-hint">
-                    If yes please enter the end date:
+                    If no, please input the end date below:
                   </span>
 
                   <div class="nhsuk-date-input" id="date-input-boxes">
@@ -164,7 +188,7 @@
     <div class="nhsuk-form-group">
         <h1 class="nhsuk-label-wrapper">
           <label class="nhsuk-label nhsuk-label--l" for="bank-holidays">
-            Number of bank holidays in the leave year:
+            Number of bank holidays in the leave period:
           </label>
           <span class="nhsuk-hint" id="bank-holidays-hint">
               Only use if calculating pro rata bank holiday entitlement

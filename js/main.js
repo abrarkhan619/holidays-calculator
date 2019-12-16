@@ -8,14 +8,13 @@ function calculateEntitlement() {
   let startMonth = document.getElementById('start-month').value - 1;
   let startYear = parseInt(document.getElementById('start-year').value);
 
-  const useDefaultStartDate = document.getElementById('startdate-opt2').checked;
+  const useDefaultStartDate = document.getElementById('startdate-opt1').checked;
 
   if (useDefaultStartDate) {
     startDay = 1;
     startMonth = 3;
-    startYear = new Date().getFullYear(); // TODO: get current year programatically.
+    startYear = new Date().getFullYear();
   }
-  console.log(startYear);
 
   const startDate = new Date(Date.UTC(startYear, startMonth, startDay));
 
@@ -23,7 +22,7 @@ function calculateEntitlement() {
   let endMonth = document.getElementById('end-month').value - 1;
   let endYear = document.getElementById('end-year').value;
 
-  const useDefaultEndDate = document.getElementById('enddate-opt2').checked;
+  const useDefaultEndDate = document.getElementById('enddate-opt1').checked;
 
   if (useDefaultEndDate) {
     endDay = 31;
@@ -64,23 +63,25 @@ function calculateEntitlement() {
 }
 
 
-function showHideDate() {
-
+function showHideStartDate() {
   const startDateInput = document.getElementById('start-date-input');
   const startDateCurrentYear = document.getElementById('startdate-opt1')
+
+  if (startDateCurrentYear.checked == true){
+    startDateInput.style.display = "none";
+  } else {
+    startDateInput.style.display = "block";
+  }
+}
+
+function showHideEndDate() {
   const endDateInput = document.getElementById('end-date-input');
   const endDateCurrentYear = document.getElementById('enddate-opt1');
 
-  if (startDateCurrentYear.checked == true){
-    startDateInput.style.display = "block";
-  } else {
-    startDateInput.style.display = "none";
-  }
-
   if (endDateCurrentYear.checked == true){
-    endDateInput.style.display = "block";
-  } else {
     endDateInput.style.display = "none";
+  } else {
+    endDateInput.style.display = "block";
   }
 }
 
@@ -95,10 +96,10 @@ function addEventListenerIfElementExists(elementId, eventType, eventFunction) {
 
 function registerListeners() {
   addEventListenerIfElementExists("calculate-button", "click", calculateEntitlement);
-  addEventListenerIfElementExists("startdate-opt1", "click", showHideDate)
-  addEventListenerIfElementExists("startdate-opt2", "click", showHideDate)
-  addEventListenerIfElementExists("enddate-opt1", "click", showHideDate)
-  addEventListenerIfElementExists("enddate-opt2", "click", showHideDate)
+  addEventListenerIfElementExists("startdate-opt1", "click", showHideStartDate)
+  addEventListenerIfElementExists("startdate-opt2", "click", showHideStartDate)
+  addEventListenerIfElementExists("enddate-opt1", "click", showHideEndDate)
+  addEventListenerIfElementExists("enddate-opt2", "click", showHideEndDate)
 }
 
 window.addEventListener("load", registerListeners);
