@@ -1,0 +1,23 @@
+{
+  "name": "annual-leave-calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Health-Education-England/annual-leave-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Health-Education-England/annual-leave-calculator/issues"
+  },
+  "homepage": "https://github.com/Health-Education-England/annual-leave-calculator#readme",
+  "dependencies": {
+    "jest": "^25.4.0"
+  }
+}
