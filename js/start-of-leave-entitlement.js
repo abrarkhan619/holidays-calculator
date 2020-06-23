@@ -31,7 +31,7 @@ function storeInput() {
 
   }
 
-  window.location.assign("./end-of-leave-entitlement.html");
+  window.location.assign("./end-of-leave-entitlement");
 }
 
 function goBack() {
