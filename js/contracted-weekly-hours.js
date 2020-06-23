@@ -7,7 +7,7 @@ function storeInput() {
   if (weeklyHours < 37.5) {
     window.location.assign("./bank-holidays-in-leave-period.html");
   } else {
-    window.location.assign("/output.html");
+    window.location.assign("/annual-leave-calculator/output.html");
   }
 
 }

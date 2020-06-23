@@ -8,7 +8,7 @@ function storeInput() {
 
   sessionStorage.setItem('bankHolidays', bankHolidays);
 
-  window.location.assign("/output.html");
+  window.location.assign("/annual-leave-calculator/output.html");
 }
 
 function goBack() {
