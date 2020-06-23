@@ -6,7 +6,7 @@ function storeInput() {
   console.log(sessionStorage.getItem('fullYear'));
   console.log(sessionStorage.getItem('entitlement'));
 
-  window.location.assign("/questions/contracted-weekly-hours.html");
+  window.location.assign("./contracted-weekly-hours.html");
 
 }
 

@@ -5,7 +5,7 @@ function storeInput() {
   sessionStorage.setItem('contractedHours', weeklyHours);
 
   if (weeklyHours < 37.5) {
-    window.location.assign("/questions/bank-holidays-in-leave-period.html");
+    window.location.assign("./bank-holidays-in-leave-period.html");
   } else {
     window.location.assign("/output.html");
   }

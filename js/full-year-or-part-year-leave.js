@@ -13,9 +13,9 @@ function storeInput() {
   sessionStorage.setItem('endDate', endDate);
 
   if (calculateFullYear == true) {
-  window.location.assign("./questions/length-of-nhs-service.html");
+  window.location.assign("./length-of-nhs-service.html");
   } else {
-    window.location.assign("./questions/start-of-leave-entitlement.html");
+    window.location.assign("./start-of-leave-entitlement.html");
   }
 }
 

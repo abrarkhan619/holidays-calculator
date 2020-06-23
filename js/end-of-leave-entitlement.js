@@ -23,7 +23,7 @@ function storeInput() {
     sessionStorage.setItem('endDate', endDate);
   }
 
-  window.location.assign("/questions/length-of-nhs-service.html");
+  window.location.assign("./length-of-nhs-service.html");
 }
 
 function goBack() {
