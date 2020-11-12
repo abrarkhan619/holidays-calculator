@@ -8,7 +8,7 @@ function storeInput() {
 
   sessionStorage.setItem('bankHolidays', bankHolidays);
 
-  window.location.assign("./output");
+  window.location.assign("../output");
 }
 
 function goBack() {
