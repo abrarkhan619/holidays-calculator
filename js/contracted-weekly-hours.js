@@ -7,7 +7,7 @@ function storeInput() {
   if (weeklyHours < 37.5) {
     window.location.assign("./bank-holidays-in-leave-period");
   } else {
-    window.location.assign("./output");
+    window.location.assign("./outpuut");
   }
 
 }
